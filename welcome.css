@@ -1,0 +1,88 @@
+:root {
+  --bg: #fbf4e4;
+  --card: #fff9ec;
+  --line: #e6d8ba;
+  --ink: #3b372f;
+  --muted: #7d7058;
+  --green: #5e9b4f;
+  --green-dark: #4a7f3d;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px 16px;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.5 ui-rounded, "SF Pro Rounded", Nunito, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+main {
+  width: 100%;
+  max-width: 480px;
+  padding: 28px 26px 24px;
+  text-align: center;
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-radius: 24px;
+  box-shadow: 0 8px 28px rgba(60, 50, 30, .12);
+}
+
+#sheep { width: 200px; margin: 0 auto 4px; }
+
+h1 { margin: 0 0 8px; font-size: 26px; font-weight: 800; }
+.lead { margin: 0 0 20px; color: var(--muted); }
+
+.choices { display: flex; flex-direction: column; gap: 10px; }
+
+button {
+  font: inherit;
+  font-weight: 800;
+  padding: 12px 18px;
+  color: var(--ink);
+  background: #efe2c4;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+}
+button:hover { background: #e6d3a8; }
+button:focus-visible { outline: 3px solid var(--green); outline-offset: 2px; }
+button.primary { color: #fff; background: var(--green); }
+button.primary:hover { background: var(--green-dark); }
+button span { font-weight: 600; opacity: .85; }
+
+.result {
+  margin: 16px 0 0;
+  padding: 10px 14px;
+  font-size: 14px;
+  text-align: left;
+  background: #eaf3df;
+  border: 1.5px solid #cfe2bd;
+  border-radius: 14px;
+}
+.result[hidden] { display: none; }
+.result.warn { background: #fdf1d9; border-color: #ecd49c; }
+
+.facts {
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+  color: var(--muted);
+  text-align: left;
+}
+.facts li { padding: 3px 0 3px 20px; position: relative; }
+.facts li::before { content: ""; position: absolute; left: 4px; top: 11px; width: 7px; height: 7px; border-radius: 50%; background: #c9bd9f; }
+
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #26231d; --card: #302c24; --line: #4a4333; --ink: #f4ead4; --muted: #b9ac8e; }
+  button { color: var(--ink); background: #4a4333; }
+  button:hover { background: #5a5240; }
+  button.primary { color: #fff; background: #4f8b42; }
+  .result { color: var(--ink); background: #2f3d27; border-color: #4a6340; }
+  .result.warn { background: #4a3d20; border-color: #6e5a2c; }
+}

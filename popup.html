@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Sleepy Sheep</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>Sleepy Sheep</h1>
+    <div class="grass" title="Grass you have earned">
+      <svg viewBox="0 0 16 16" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M2.5 13.5C2.5 7 6.5 2.5 13.5 2.5 13.5 9 9.5 13.5 2.5 13.5z"/></svg>
+      <span id="grass">0</span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div id="sheep" aria-hidden="true"></div>
+    <div class="phase" id="phase">Focus</div>
+    <div class="time" id="time">25:00</div>
+    <div class="controls">
+      <button id="toggle" class="primary" type="button">Start</button>
+      <button id="reset" type="button">Reset</button>
+      <button id="skip" type="button" hidden>Skip break</button>
+    </div>
+    <p class="stats" id="stats">0 sessions today</p>
+  </section>
+
+  <section class="card">
+    <h2>Where the sheep shows up</h2>
+    <p class="note first" id="sitesStatus">Checking...</p>
+    <div class="actions" id="sitesActions"></div>
+    <ul class="sites" id="sitesList"></ul>
+    <label class="check" id="hostRow" hidden><input id="showHere" type="checkbox"> Show the sheep on <b id="hostName">this page</b></label>
+    <p class="note" id="hostNote" hidden></p>
+  </section>
+
+  <section class="card">
+    <h2>Timer (minutes)</h2>
+    <div class="grid">
+      <label>Focus <input id="focusMin" type="number" min="1" max="180" inputmode="numeric"></label>
+      <label>Short break <input id="shortMin" type="number" min="1" max="60" inputmode="numeric"></label>
+      <label>Long break <input id="longMin" type="number" min="1" max="90" inputmode="numeric"></label>
+      <label>Long break every <input id="longEvery" type="number" min="2" max="12" inputmode="numeric"></label>
+    </div>
+    <label class="check"><input id="autoStart" type="checkbox"> Start the next phase automatically</label>
+    <label class="check"><input id="notifications" type="checkbox"> Notify me when I'm away from Chrome</label>
+  </section>
+
+  <footer>Sleepy Sheep v0.1 &middot; early prototype</footer>
+
+  <script src="shared.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

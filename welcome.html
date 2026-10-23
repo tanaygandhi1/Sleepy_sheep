@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to Sleepy Sheep</title>
+  <link rel="stylesheet" href="welcome.css">
+</head>
+<body>
+  <main>
+    <div id="sheep" aria-hidden="true"></div>
+    <h1>Sleepy Sheep is ready</h1>
+    <p class="lead">One last step: choose where your sheep can show up. It will sit in the corner of the page, study while your timer runs, and sleep when you take a break.</p>
+
+    <div class="choices">
+      <button id="all" class="primary" type="button">Show on all websites <span>(recommended)</span></button>
+      <button id="each" type="button">I'll pick site by site</button>
+    </div>
+
+    <p id="result" class="result" role="status" hidden></p>
+
+    <ul class="facts">
+      <li>Chrome will ask you to confirm. The sheep only draws itself on the page.</li>
+      <li>It does not read what is on your pages, and nothing leaves your browser.</li>
+      <li>You can change this any time from the sheep icon in your toolbar.</li>
+    </ul>
+  </main>
+
+  <script src="shared.js"></script>
+  <script src="welcome.js"></script>
+</body>
+</html>
